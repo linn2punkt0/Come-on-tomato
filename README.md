@@ -3,6 +3,11 @@
 
 
 ### Art
-- Background: https://opengameart.org/content/city-background-repetitive-2 Artist: Alucard
+- City-background: https://opengameart.org/content/city-background-repetitive-2 Artist: Alucard
 - Tomato: Designed By Pic Studio from https://pngtree.com/freepng/vegetable-fruit-and-vegetable-tomato-element-design-and-vegetable-tomato-element-design_4071429.html
 - Rat: Designed By ku from https://pngtree.com/freepng/mouse-design-material_2089418.html, edited by us
+
+- Photo by Melanie Magdalena on Unsplash https://unsplash.com/photos/qfW2R0n6CfY
+- Photo by Chan Hoi on Unsplash https://unsplash.com/photos/EawumO7WTv4
+- Photo by Patrick Fore on Unsplash https://unsplash.com/photos/HVFYFns30-I
+- Photo by Spencer Watson on Unsplash https://unsplash.com/photos/p0Yupww_SNM
