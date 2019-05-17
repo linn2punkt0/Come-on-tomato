@@ -18,7 +18,6 @@ class Game extends Phaser.Scene {
   create() {
     const city = this.add.image(0, 400, "city");
     const tomato = new Tomato(this, 100, 600, "tomato");
-    tomato.preload();
     tomato.create();
   }
 
