@@ -23,7 +23,7 @@ class Rat extends Phaser.GameObjects.Sprite {
     Console.log("crash");
     // this.physics.pause();
 
-    tomato.setTint(0xff0000);
+    // tomato.setTint(0xff0000);
 
     // tomato.anims.play("turn");
 
