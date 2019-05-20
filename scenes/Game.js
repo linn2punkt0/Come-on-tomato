@@ -43,7 +43,10 @@ class Game extends Phaser.Scene {
 
     // Add collider
     this.physics.add.collider(this.rat, this.tomato, () => {
-      console.log("hello");
+      console.log("hit rat");
+    });
+    this.physics.add.collider(this.tomato.tomato, platforms, () => {
+      console.log("hit ground");
     });
     this.physics.add.collider(
       this.tomato,
@@ -53,7 +56,7 @@ class Game extends Phaser.Scene {
       // this
     );
 
-    console.log(this.tomato);
+    console.log(this.tomato.tomato);
   }
 
   update() {
