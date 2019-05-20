@@ -28,7 +28,7 @@ class Game extends Phaser.Scene {
     const city = this.add.image(0, 400, "city");
     const platforms = this.physics.add.staticGroup();
     platforms
-      .create(0, 600, "ground")
+      .create(200, 660, "ground")
       .setScale(1)
       .refreshBody();
 
@@ -42,6 +42,7 @@ class Game extends Phaser.Scene {
 
     // Add collider
     this.physics.add.collider(this.tomato, platforms);
+    this.physics.add.collider(this.rat, platforms);
     this.physics.add.collider(
       this.tomato,
       this.rat,
@@ -52,6 +53,7 @@ class Game extends Phaser.Scene {
   }
   update() {
     this.tomato.update();
+    this.rat.update();
   }
 }
 
