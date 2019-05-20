@@ -41,7 +41,8 @@ class Game extends Phaser.Scene {
     this.tomato.create();
 
     // Add collider
-    this.physics.add.collider(this.tomato, platforms, this.rat);
+    this.physics.add.collider(this.tomato, platforms);
+    this.physics.add.collider(this.tomato, this.rat);
   }
   update() {
     this.tomato.update();
