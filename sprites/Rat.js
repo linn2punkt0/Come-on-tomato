@@ -8,22 +8,14 @@ class Rat extends Phaser.GameObjects.Sprite {
     // scene.add.existing(this);
   }
 
-  preload() {
-    // console.log(this.scene);
-    // this.scene.load.image("tomato", TomatoImg);
-  }
+  preload() {}
 
   create() {
     const rat = this.scene.add.sprite(this.x, this.y, "rat");
     rat.setScale(0.1);
-    // cursors = this.input.keyboard.createCursorKeys();
   }
 
-  update() {
-    // if (cursors.down.isDown()) {
-    //   tomato.y += 1;
-    // }
-  }
+  update() {}
 }
 
 export default Rat;
