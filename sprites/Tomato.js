@@ -16,7 +16,7 @@ class Tomato extends Phaser.GameObjects.Sprite {
     this.tomato.setScale(0.07);
 
     this.tomato.setBounce(0.2);
-    this.tomato.setCollideWorldBound(true);
+    this.tomato.setCollideWorldBounds(true);
 
     this.tomato.body.setGravityY(300);
 
