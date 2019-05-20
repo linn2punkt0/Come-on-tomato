@@ -16,6 +16,16 @@ class Rat extends Phaser.GameObjects.Sprite {
   }
 
   update() {}
+
+  collide(player, bomb) {
+    this.physics.pause();
+
+    player.setTint(0xff0000);
+
+    player.anims.play("turn");
+
+    gameOver = true;
+  }
 }
 
 export default Rat;
