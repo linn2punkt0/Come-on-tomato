@@ -20,7 +20,7 @@ class Rat extends Phaser.GameObjects.Sprite {
   }
 
   collide(tomato, rat) {
-    Console.log("crash");
+    console.log("crash");
     // this.physics.pause();
 
     // tomato.setTint(0xff0000);
