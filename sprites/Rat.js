@@ -11,7 +11,7 @@ class Rat extends Phaser.GameObjects.Sprite {
   preload() {}
 
   create() {
-    this.rat = this.scene.add.sprite(this.x, this.y, "rat");
+    this.rat = this.scene.physics.add.staticSprite(this.x, this.y, "rat");
     this.rat.setScale(0.1);
   }
 
@@ -19,14 +19,14 @@ class Rat extends Phaser.GameObjects.Sprite {
     this.rat.x -= 1;
   }
 
-  collide(player, rat) {
-    this.physics.pause();
+  collide(tomato, rat) {
+    // this.physics.pause();
 
-    player.setTint(0xff0000);
+    tomato.setTint(0xff0000);
 
-    player.anims.play("turn");
+    // tomato.anims.play("turn");
 
-    gameOver = true;
+    // gameOver = true;
   }
 }
 

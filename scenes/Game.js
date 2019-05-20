@@ -46,7 +46,7 @@ class Game extends Phaser.Scene {
     this.physics.add.collider(
       this.tomato,
       this.rat,
-      this.rat.collide,
+      this.rat.collide(this.tomato, this.rat),
       null,
       this
     );
