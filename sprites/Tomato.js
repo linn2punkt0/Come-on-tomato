@@ -6,24 +6,43 @@ class Tomato extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, texture) {
     super(scene, x, y, texture);
     this.scene = scene;
-    // scene.add.existing(this);
   }
 
   preload() {
-    // console.log(this.scene);
-    // this.scene.load.image("tomato", TomatoImg);
   }
 
   create() {
-    const tomato = this.scene.add.sprite(this.x, this.y, "tomato");
-    tomato.setScale(0.07);
-    // cursors = this.input.keyboard.createCursorKeys();
+    this.tomato = this.scene.physics.add.sprite(this.x, this.y, "tomato");
+    this.tomato.setScale(0.07);
+
+    this.tomato.setBounce(0.2);
+    this.tomato.setCollideWorldBounds(true);
+
+    this.tomato.body.setGravityY(300);
+
+    this.cursors = this.scene.input.keyboard.createCursorKeys();
+
+    // this.tomato.anchor.setTo(0.5);
+
   }
 
   update() {
-    // if (cursors.down.isDown()) {
-    //   tomato.y += 1;
-    // }
+    //Defining tomato movement
+    if (Phaser.Input.Keyboard.JustDown(this.cursors.up)) {
+      this.tomato.y -= 60;
+    }
+
+    if (this.cursors.space.isDown) {
+      this.tomato.y -= 10;
+    }
+
+    if (this.cursors.right.isDown) {
+      this.tomato.x += 3;
+    }
+
+    else if (this.cursors.left.isDown) {
+      this.tomato.x -= 3;
+    }
   }
 }
 
