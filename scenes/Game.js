@@ -33,22 +33,22 @@ class Game extends Phaser.Scene {
       .refreshBody();
 
     // Add rat sprite
-    this.rat = new Rat(this, 400, 600, "rat");
-    this.rat.create();
+    this.rat = new Rat(this, 400, 600, "rat").create();
+    // this.rat.create();
 
-    // Add toamto sprite
-    this.tomato = new Tomato(this, 100, 600, "tomato");
-    this.tomato.create();
+    // Add tomato sprite
+    this.tomato = new Tomato(this, 100, 600, "tomato").create();
 
     // Add collider
-    this.physics.add.collider(this.tomato, platforms);
-    this.physics.add.collider(this.rat, platforms);
+    this.physics.add.collider(this.rat, this.tomato, () => {
+      console.log("hello");
+    });
     this.physics.add.collider(
       this.tomato,
       this.rat,
-      this.rat.collide(this.tomato, this.rat),
-      null,
-      this
+      this.rat.collide
+      // null,
+      // this
     );
   }
   update() {
