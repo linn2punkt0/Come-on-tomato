@@ -41,6 +41,7 @@ class Tomato extends Phaser.GameObjects.Sprite {
 
     if (this.cursors.right.isDown) {
       this.tomato.x += 3;
+      this.tomato.angle += 10;
     } else if (this.cursors.left.isDown) {
       this.tomato.x -= 3;
       this.tomato.angle -= 10;

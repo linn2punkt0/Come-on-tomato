@@ -52,7 +52,10 @@ class Game extends Phaser.Scene {
       // null,
       // this
     );
+
+    console.log(this.tomato);
   }
+
   update() {
     this.tomato.update();
     this.rat.update();
