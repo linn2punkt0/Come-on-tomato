@@ -21,16 +21,13 @@ class Tomato extends Phaser.GameObjects.Sprite {
     this.tomato.body.setGravityY(300);
 
     this.cursors = this.scene.input.keyboard.createCursorKeys();
-
-    // this.tomato.anchor.setTo(0.5);
+    // console.log(this.tomato.anchor)
+    // this.tomato.anchor.setTo(0.5, 0.5);
 
   }
 
   update() {
     //Defining tomato movement
-    if (Phaser.Input.Keyboard.JustDown(this.cursors.up)) {
-      this.tomato.y -= 60;
-    }
 
     if (this.cursors.space.isDown) {
       this.tomato.y -= 10;
@@ -38,10 +35,12 @@ class Tomato extends Phaser.GameObjects.Sprite {
 
     if (this.cursors.right.isDown) {
       this.tomato.x += 3;
+      this.tomato.angle += 10;
     }
 
     else if (this.cursors.left.isDown) {
       this.tomato.x -= 3;
+      this.tomato.angle -= 10;
     }
   }
 }
