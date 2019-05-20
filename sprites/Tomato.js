@@ -17,6 +17,8 @@ class Tomato extends Phaser.GameObjects.Sprite {
 
     this.cursors = this.scene.input.keyboard.createCursorKeys();
 
+    // this.tomato.anchor.setTo(0.5);
+
   }
 
   update() {
