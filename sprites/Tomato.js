@@ -12,8 +12,13 @@ class Tomato extends Phaser.GameObjects.Sprite {
   }
 
   create() {
-    this.tomato = this.scene.add.sprite(this.x, this.y, "tomato");
+    this.tomato = this.scene.physics.add.sprite(this.x, this.y, "tomato");
     this.tomato.setScale(0.07);
+
+    this.tomato.setBounce(0.2);
+    this.tomato.setCollideWorldBound(true);
+
+    this.tomato.body.setGravityY(300);
 
     this.cursors = this.scene.input.keyboard.createCursorKeys();
 
