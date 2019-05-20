@@ -13,6 +13,8 @@ class Rat extends Phaser.GameObjects.Sprite {
   create() {
     this.rat = this.scene.physics.add.staticSprite(this.x, this.y, "rat");
     this.rat.setScale(0.1);
+
+    return this.rat;
   }
 
   update() {

@@ -8,8 +8,7 @@ class Tomato extends Phaser.GameObjects.Sprite {
     this.scene = scene;
   }
 
-  preload() {
-  }
+  preload() {}
 
   create() {
     this.tomato = this.scene.physics.add.sprite(this.x, this.y, "tomato");
@@ -24,6 +23,7 @@ class Tomato extends Phaser.GameObjects.Sprite {
 
     // this.tomato.anchor.setTo(0.5);
 
+    return this.tomato;
   }
 
   update() {
@@ -38,9 +38,7 @@ class Tomato extends Phaser.GameObjects.Sprite {
 
     if (this.cursors.right.isDown) {
       this.tomato.x += 3;
-    }
-
-    else if (this.cursors.left.isDown) {
+    } else if (this.cursors.left.isDown) {
       this.tomato.x -= 3;
     }
   }
