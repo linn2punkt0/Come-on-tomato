@@ -11,6 +11,7 @@ class Game extends Phaser.Scene {
     super({
       key: "Game"
     });
+
   }
 
   preload() {
@@ -19,22 +20,24 @@ class Game extends Phaser.Scene {
     this.load.image("tomato", TomatoImg);
     this.load.image("rat", RatImg);
   }
-
   create() {
     // Add city background
     const sky = this.add.image(600, 0, "sky");
     sky.setScale(0.4);
     const city = this.add.image(0, 400, "city");
 
-    // Add tomato sprite
-    const tomato = new Tomato(this, 100, 600, "tomato");
-    tomato.create();
-
     // Add rat sprite
     const rat = new Rat(this, 400, 600, "rat");
     rat.create();
+
+    this.tomato = new Tomato(this, 100, 600, "tomato");
+    this.tomato.create();
+  }
+  update() {
+    this.tomato.update();
   }
 
-  update() {}
 }
+
+
 export default Game;
