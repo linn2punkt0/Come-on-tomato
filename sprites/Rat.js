@@ -11,13 +11,15 @@ class Rat extends Phaser.GameObjects.Sprite {
   preload() {}
 
   create() {
-    const rat = this.scene.add.sprite(this.x, this.y, "rat");
-    rat.setScale(0.1);
+    this.rat = this.scene.add.sprite(this.x, this.y, "rat");
+    this.rat.setScale(0.1);
   }
 
-  update() {}
+  update() {
+    this.rat.x -= 1;
+  }
 
-  collide(player, bomb) {
+  collide(player, rat) {
     this.physics.pause();
 
     player.setTint(0xff0000);
