@@ -8,19 +8,23 @@ class Game extends Phaser.Scene {
     super({
       key: "Game"
     });
+
   }
 
   preload() {
     this.load.image("city", Background);
     this.load.image("tomato", TomatoImg);
   }
-
   create() {
     const city = this.add.image(0, 400, "city");
-    const tomato = new Tomato(this, 100, 600, "tomato");
-    tomato.create();
+    this.tomato = new Tomato(this, 100, 600, "tomato");
+    this.tomato.create();
+  }
+  update() {
+    this.tomato.update();
   }
 
-  update() {}
 }
+
+
 export default Game;
