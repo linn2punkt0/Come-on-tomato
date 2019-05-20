@@ -28,12 +28,12 @@ class Tomato extends Phaser.GameObjects.Sprite {
 
   update() {
     //Defining tomato movement
-    if (this.cursors.down.isDown) {
-      this.tomato.y += 3;
+    if (Phaser.Input.Keyboard.JustDown(this.cursors.up)) {
+      this.tomato.y -= 60;
     }
 
-    else if (this.cursors.up.isDown) {
-      this.tomato.y -= 3;
+    if (this.cursors.space.isDown) {
+      this.tomato.y -= 10;
     }
 
     if (this.cursors.right.isDown) {
