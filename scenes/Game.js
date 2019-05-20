@@ -38,7 +38,8 @@ class Game extends Phaser.Scene {
     this.rat = new Rat(this, 400, 600, "rat");
 
     // Add tomato sprite
-    this.tomato = new Tomato(this, 100, 600, "tomato").create();
+    // this.tomato = new Tomato(this, 100, 600, "tomato").create();
+    this.tomato = new Tomato(this, 100, 600, "tomato");
 
     // Add collider
     this.physics.add.collider(this.rat, this.tomato, () => {
