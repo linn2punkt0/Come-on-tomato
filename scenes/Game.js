@@ -25,7 +25,8 @@ class Game extends Phaser.Scene {
     // Add city background, sky and ground
     const sky = this.add.image(600, 0, "sky");
     sky.setScale(0.4);
-    const city = this.add.image(0, 400, "city");
+    sky.setScrollFactor(0);
+    const city = this.add.image(1450, 400, "city");
     const platforms = this.physics.add.staticGroup();
     platforms
       .create(200, 720, "ground")
@@ -62,28 +63,26 @@ class Game extends Phaser.Scene {
 
     function camera(player, scene) {
       // set Cameras here
-      scene.cameras.main.setBounds(0, 0, 2000, 400);
-      scene.physics.world.setBounds(0, 0, 2000, 400);
+      scene.cameras.main.setBounds(0, 0, 2000, 640);
+      scene.physics.world.setBounds(0, 0, 2000, 640);
       scene.cameras.main.startFollow(player, true, 0.5, 0.5);
     }
 
     if (this.tomato && camera(this.tomato.tomato, this.scene.scene));
   }
 
-
   update() {
     this.tomato.update();
     this.rat.update();
 
     if (this.gameOver) {
-      this.tomato.tomato.setTint(0x2A0000);
+      this.tomato.tomato.setTint(0x2a0000);
       // this.scene.stop("Game");
       this.scene.transition({
         target: "GameOver",
-        duration: 500,
+        duration: 500
       });
     }
-
   }
 }
 
