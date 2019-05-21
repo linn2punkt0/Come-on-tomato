@@ -29,18 +29,16 @@ class Game extends Phaser.Scene {
     const city = this.add.image(1450, 400, "city");
     const platforms = this.physics.add.staticGroup();
     platforms
-      .create(200, 720, "ground")
-      .setScale(2)
+      .create(1200, 780, "ground")
+      .setScale(3)
       .refreshBody();
+    // Game over
     this.gameOver = false;
 
     // Add rat sprite
-    // this.rat = new Rat(this, 400, 600, "rat").create();
-    // this.rat.create();
     this.rat = new Rat(this, 400, 550, "rat");
 
     // Add tomato sprite
-    // this.tomato = new Tomato(this, 100, 600, "tomato").create();
     this.tomato = new Tomato(this, 100, 570, "tomato");
 
     // Add collider
@@ -61,13 +59,12 @@ class Game extends Phaser.Scene {
       // this
     );
 
+    // Set camera
     function camera(player, scene) {
-      // set Cameras here
-      scene.cameras.main.setBounds(0, 0, 2000, 640);
-      scene.physics.world.setBounds(0, 0, 2000, 640);
+      scene.cameras.main.setBounds(0, 0, 3000, 640);
+      scene.physics.world.setBounds(0, 0, 3000, 640);
       scene.cameras.main.startFollow(player, true, 0.5, 0.5);
     }
-
     if (this.tomato && camera(this.tomato.tomato, this.scene.scene));
   }
 
@@ -75,6 +72,7 @@ class Game extends Phaser.Scene {
     this.tomato.update();
     this.rat.update();
 
+    // Switch scene if game is over
     if (this.gameOver) {
       this.tomato.tomato.setTint(0x2a0000);
       // this.scene.stop("Game");
