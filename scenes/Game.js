@@ -59,7 +59,14 @@ class Game extends Phaser.Scene {
       // this
     );
 
-    console.log(this.tomato.tomato);
+    function camera(player, scene) {
+      // set Cameras here
+      scene.cameras.main.setBounds(0, 0, 2000, 400);
+      scene.physics.world.setBounds(0, 0, 2000, 400);
+      scene.cameras.main.startFollow(player, true, 0.5, 0.5);
+    }
+
+    if (this.tomato && camera(this.tomato.tomato, this.scene.scene));
   }
 
   update() {
