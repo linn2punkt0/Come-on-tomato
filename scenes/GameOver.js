@@ -5,6 +5,7 @@ class GameOver extends Phaser.Scene {
     super({
       key: "GameOver"
     });
+
   }
 
   create() {
@@ -13,9 +14,15 @@ class GameOver extends Phaser.Scene {
       align:'center',
     });
     this.gameOverText.setOrigin(0.5);
+
+    this.cursors = this.input.keyboard.createCursorKeys();
   }
 
-  update() {}
+  update() {
+    if (this.cursors.space.isDown) {
+      this.scene.start("Game");
+    }
+  }
 }
 
 export default GameOver;
