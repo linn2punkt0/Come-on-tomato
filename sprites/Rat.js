@@ -6,8 +6,10 @@ class Rat extends Phaser.GameObjects.Sprite {
     super(scene, x, y, texture);
     this.scene = scene;
     // scene.add.existing(this);
-    this.rat = this.scene.physics.add.staticSprite(x, y, "rat");
+    this.rat = this.scene.physics.add.sprite(this.x, this.y, "rat");
     this.rat.setScale(0.1);
+
+    this.rat.setCollideWorldBounds(false);
   }
 
   preload() {}
@@ -15,7 +17,6 @@ class Rat extends Phaser.GameObjects.Sprite {
   create() {
     // this.rat = this.scene.physics.add.staticSprite(this.x, this.y, "rat");
     // this.rat.setScale(0.1);
-    // return this.rat;
   }
 
   update() {
