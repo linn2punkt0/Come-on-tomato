@@ -31,6 +31,7 @@ class Game extends Phaser.Scene {
       .create(200, 660, "ground")
       .setScale(1)
       .refreshBody();
+    this.gameOver = false;
 
     // Add rat sprite
     // this.rat = new Rat(this, 400, 600, "rat").create();
@@ -43,7 +44,7 @@ class Game extends Phaser.Scene {
 
     // Add collider
     this.physics.add.collider(this.rat.rat, this.tomato.tomato, () => {
-      console.log("hit rat");
+      this.gameOver = true;
     });
     this.physics.add.collider(this.tomato.tomato, platforms, () => {
       // console.log("hit ground");
@@ -62,9 +63,20 @@ class Game extends Phaser.Scene {
     console.log(this.tomato.tomato);
   }
 
+
   update() {
     this.tomato.update();
     this.rat.update();
+
+    if (this.gameOver) {
+      this.tomato.tomato.setTint(0x2A0000);
+      // this.scene.stop("Game");
+      this.scene.transition({
+        target: "GameOver",
+        duration: 500,
+      });
+    }
+
   }
 }
 
