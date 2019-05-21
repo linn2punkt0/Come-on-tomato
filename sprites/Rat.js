@@ -22,17 +22,6 @@ class Rat extends Phaser.GameObjects.Sprite {
   update() {
     this.rat.x -= 1;
   }
-
-  collide(tomato, rat) {
-    console.log("crash");
-    // this.physics.pause();
-
-    // tomato.setTint(0xff0000);
-
-    // tomato.anims.play("turn");
-
-    // gameOver = true;
-  }
 }
 
 export default Rat;

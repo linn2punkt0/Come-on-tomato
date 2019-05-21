@@ -25,21 +25,20 @@ class Game extends Phaser.Scene {
     // Add city background, sky and ground
     const sky = this.add.image(600, 0, "sky");
     sky.setScale(0.4);
-    const city = this.add.image(0, 400, "city");
+    sky.setScrollFactor(0);
+    const city = this.add.image(1450, 400, "city");
     const platforms = this.physics.add.staticGroup();
     platforms
-      .create(200, 660, "ground")
-      .setScale(1)
+      .create(1200, 780, "ground")
+      .setScale(3)
       .refreshBody();
+    // Game over
     this.gameOver = false;
 
     // Add rat sprite
-    // this.rat = new Rat(this, 400, 600, "rat").create();
-    // this.rat.create();
     this.rat = new Rat(this, 400, 550, "rat");
 
     // Add tomato sprite
-    // this.tomato = new Tomato(this, 100, 600, "tomato").create();
     this.tomato = new Tomato(this, 100, 570, "tomato");
 
     // Add collider
@@ -60,14 +59,19 @@ class Game extends Phaser.Scene {
       // this
     );
 
-    console.log(this.tomato.tomato);
+    // Set camera
+    function camera(player, scene) {
+      scene.cameras.main.setBounds(0, 0, 3000, 640);
+      scene.physics.world.setBounds(0, 0, 3000, 640);
+      scene.cameras.main.startFollow(player, true, 0.5, 0.5);
+    }
+    if (this.tomato && camera(this.tomato.tomato, this.scene.scene));
   }
-
 
   update() {
     this.tomato.update();
     this.rat.update();
-
+    
     //Changing scene on game over
     if (this.gameOver) {
       this.tomato.tomato.setTint(0x2A0000);
@@ -76,7 +80,6 @@ class Game extends Phaser.Scene {
         duration: 300,
       });
     }
-
   }
 }
 
