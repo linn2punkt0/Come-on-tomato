@@ -28,8 +28,8 @@ class Game extends Phaser.Scene {
     const city = this.add.image(0, 400, "city");
     const platforms = this.physics.add.staticGroup();
     platforms
-      .create(200, 660, "ground")
-      .setScale(1)
+      .create(200, 720, "ground")
+      .setScale(2)
       .refreshBody();
 
     // Add rat sprite
