@@ -7,6 +7,8 @@
 - Tomato: Designed By Pic Studio from https://pngtree.com/freepng/vegetable-fruit-and-vegetable-tomato-element-design-and-vegetable-tomato-element-design_4071429.html
 - Rat: Designed By ku from https://pngtree.com/freepng/mouse-design-material_2089418.html, edited by us
 - Seagull: Graphics Designed By 黑色 from https://pngtree.com/freepng/flying-seagull_201203.html, edited by us
+- Tomato can: https://www.freepik.com/free-photos-vectors/food Food vector created by brgfx - www.freepik.com
+- Ketchup bottle: Graphics from https://pngtree.com/freepng/tomato-sauce-free-button-elements_3079068.html pngtree.com
 
 
 Skies:
