@@ -1,7 +1,7 @@
 # Come-on-tomato
 
 <img src="https://media.giphy.com/media/101t9QwTM6y5oc/giphy.gif"/>
-### Get the tomato through the dark city night. Danger lurks everywhere when you're a small tomato.
+## Get the tomato through the dark city night. Danger lurks everywhere when you're a small tomato.
 
 ### Navigate with the left and right arrows and jump with spacebar.
 
