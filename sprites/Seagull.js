@@ -6,12 +6,10 @@ class Seagull extends Phaser.GameObjects.Sprite {
     super(scene, x, y, texture);
     this.scene = scene;
     // scene.add.existing(this);
-    this.seagull = this.scene.physics.add.staticSprite(
-      this.x,
-      this.y,
-      "seagull"
-    );
+    this.seagull = this.scene.physics.add.sprite(this.x, this.y, "seagull");
     this.seagull.setScale(0.2);
+    this.seagull.setCollideWorldBounds(false);
+    this.seagull.body.setAllowGravity(false);
   }
 
   preload() {}
