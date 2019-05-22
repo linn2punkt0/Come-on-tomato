@@ -22,3 +22,4 @@ Navigate with the left and right arrows and jump with spacebar.
 - Tomato can: https://www.freepik.com/free-photos-vectors/food Food vector created by brgfx - www.freepik.com
 - Ketchup bottle: Graphics from https://pngtree.com/freepng/tomato-sauce-free-button-elements_3079068.html pngtree.com
 
+## Pull request log:
