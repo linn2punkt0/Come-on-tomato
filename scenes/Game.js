@@ -1,12 +1,12 @@
 import Phaser from "phaser";
 import Tomato from "../sprites/Tomato";
-import City from "../images/cityGrey.png";
+import City from "../images/cityDark.png";
 import Sky from "../images/sky4.jpg";
 import TomatoImg from "../images/tomato.png";
 import RatImg from "../images/rat3.png";
 import Rat from "../sprites/Rat";
 import Ground from "../images/ground2.png";
-import SeagullImg from "../images/seagull.png";
+import SeagullImg from "../images/demonSeagull2.png";
 import Seagull from "../sprites/Seagull";
 
 class Game extends Phaser.Scene {
