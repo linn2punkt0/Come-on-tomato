@@ -6,6 +6,8 @@ import TomatoImg from "../images/tomato.png";
 import RatImg from "../images/rat3.png";
 import Rat from "../sprites/Rat";
 import Ground from "../images/ground2.png";
+import Can from "../sprites/Can";
+import CanImg from "../images/tomatoCan.png";
 
 class Game extends Phaser.Scene {
   constructor() {
@@ -19,6 +21,7 @@ class Game extends Phaser.Scene {
     this.load.image("city", City);
     this.load.image("tomato", TomatoImg);
     this.load.image("rat", RatImg);
+    this.load.image("can", CanImg);
     this.load.image("ground", Ground);
   }
   create() {
@@ -38,12 +41,30 @@ class Game extends Phaser.Scene {
     // Add rat sprite
     this.rat = new Rat(this, 400, 550, "rat");
 
+    //Create and add can sprites to group
+    this.can1 = new Can(this, 600, -700, "can");
+    this.can2 = new Can(this, 800, -800, "can");
+    this.can3 = new Can(this, 600, -1000, "can");
+    this.can4 = new Can(this, 1000, -1200, "can");
+
+    this.cans = this.add.group();
+    this.cans.add(this.can1);
+    this.cans.add(this.can2);
+    this.cans.add(this.can3);
+    this.cans.add(this.can4);
+
     // Add tomato sprite
     this.tomato = new Tomato(this, 100, 570, "tomato");
 
     // Add collider
     this.physics.add.collider(this.rat.rat, this.tomato.tomato, () => {
       this.gameOver = true;
+    });
+    // Looping through cans and check for tomato collision
+    this.cans.children.entries.forEach((can) => {
+      this.physics.add.collider(this.tomato.tomato, can.can, () => {
+          this.gameOver = true;
+      });
     });
     this.physics.add.collider(this.tomato.tomato, platforms, () => {
       // console.log("hit ground");
@@ -71,6 +92,16 @@ class Game extends Phaser.Scene {
   update() {
     this.tomato.update();
     this.rat.update();
+
+    //Breaking update of cans if game over
+    try {
+      this.cans.getChildren().forEach((can) => {
+        can.update();
+      });
+    }
+    catch (e) {
+      if (e === TypeError);
+    }
 
     //Changing scene on game over
     if (this.gameOver) {
