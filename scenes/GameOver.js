@@ -1,4 +1,6 @@
 import Phaser from 'phaser';
+import SmashedTomato from "../images/smashedTomato.png";
+import SmashedTomato2 from "../images/smashedTomato2.png";
 
 class GameOver extends Phaser.Scene {
   constructor() {
@@ -8,18 +10,27 @@ class GameOver extends Phaser.Scene {
 
   }
 
+  preload() {
+    this.load.image("smashedTomato", SmashedTomato);
+  }
+
   create() {
+    //Gameover image
+    const smashedTomato = this.add.image(150, 400, "smashedTomato");
+    smashedTomato.setScale(0.6);
+    // const smashedTomato2 = this.add.image(150, 400, "smashedTomato2");
+
     //Game over text
-    this.gameOverText = this.add.text(400, 300, "Game Over", {
-      font:"80px Impact",
-      align:'center',
+    this.gameOverText = this.add.text(450, 200, " Come on, catch up!", {
+      font: "80px Impact",
+      align: 'center',
     });
     this.gameOverText.setOrigin(0.5);
 
-    //Play again t3ext
-    this.restartText = this.add.text(400, 600, "Press space to play again", {
-      font:"20px",
-      align:'center',
+    //Play again text
+    this.restartText = this.add.text(450, 550, "Press space to play again", {
+      font: "20px",
+      align: 'center',
     });
     this.restartText.setOrigin(0.5);
 
@@ -27,7 +38,7 @@ class GameOver extends Phaser.Scene {
   }
 
   update() {
-    //Changing scene to game on scpace tap
+    //Changing scene to game on space tap
     if (this.cursors.space.isDown) {
       this.scene.start("Game");
       console.log(this.cursors);

@@ -1,11 +1,13 @@
 import Phaser from "phaser";
 import Tomato from "../sprites/Tomato";
-import City from "../images/cityGrey.png";
+import City from "../images/cityDark.png";
 import Sky from "../images/sky4.jpg";
 import TomatoImg from "../images/tomato.png";
 import RatImg from "../images/rat3.png";
 import Rat from "../sprites/Rat";
 import Ground from "../images/ground2.png";
+import SeagullImg from "../images/demonSeagull2.png";
+import Seagull from "../sprites/Seagull";
 
 class Game extends Phaser.Scene {
   constructor() {
@@ -20,6 +22,7 @@ class Game extends Phaser.Scene {
     this.load.image("tomato", TomatoImg);
     this.load.image("rat", RatImg);
     this.load.image("ground", Ground);
+    this.load.image("seagull", SeagullImg);
   }
   create() {
     // Add city background, sky and ground
@@ -32,11 +35,13 @@ class Game extends Phaser.Scene {
       .create(1200, 780, "ground")
       .setScale(3)
       .refreshBody();
+
     // Game over
     this.gameOver = false;
 
-    // Add rat sprite
+    // Add enemy sprites
     this.rat = new Rat(this, 400, 550, "rat");
+    this.seagull = new Seagull(this, 1000, 100, "seagull");
 
     // Add tomato sprite
     this.tomato = new Tomato(this, 100, 570, "tomato");
@@ -45,19 +50,16 @@ class Game extends Phaser.Scene {
     this.physics.add.collider(this.rat.rat, this.tomato.tomato, () => {
       this.gameOver = true;
     });
+    this.physics.add.collider(this.seagull.seagull, this.tomato.tomato, () => {
+      this.gameOver = true;
+    });
+
     this.physics.add.collider(this.tomato.tomato, platforms, () => {
       // console.log("hit ground");
     });
     this.physics.add.collider(this.rat.rat, platforms, () => {
       // console.log("hit ground");
     });
-    this.physics.add.collider(
-      this.tomato,
-      this.rat,
-      this.rat.collide
-      // null,
-      // this
-    );
 
     // Set camera
     function camera(player, scene) {
@@ -71,13 +73,16 @@ class Game extends Phaser.Scene {
   update() {
     this.tomato.update();
     this.rat.update();
+    this.seagull.update();
 
     //Changing scene on game over
     if (this.gameOver) {
       this.tomato.tomato.setTint(0x2a0000);
+      this.scene.stop("Game");
+
       this.scene.transition({
         target: "GameOver",
-        duration: 300
+        duration: 500
       });
     }
 
