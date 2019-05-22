@@ -6,6 +6,7 @@ import TomatoImg from "../images/tomato.png";
 import RatImg from "../images/rat3.png";
 import Rat from "../sprites/Rat";
 import Ground from "../images/ground2.png";
+import SeagullImg from "../images/seagull.png";
 import Seagull from "../sprites/Seagull";
 
 class Game extends Phaser.Scene {
@@ -21,7 +22,7 @@ class Game extends Phaser.Scene {
     this.load.image("tomato", TomatoImg);
     this.load.image("rat", RatImg);
     this.load.image("ground", Ground);
-    this.load.image("seagull", Seagull);
+    this.load.image("seagull", SeagullImg);
   }
   create() {
     // Add city background, sky and ground
@@ -40,7 +41,7 @@ class Game extends Phaser.Scene {
 
     // Add enemy sprites
     this.rat = new Rat(this, 400, 550, "rat");
-    this.seagull = new Seagull(this, 600, 100, "seagull");
+    this.seagull = new Seagull(this, 1000, 100, "seagull");
 
     // Add tomato sprite
     this.tomato = new Tomato(this, 100, 570, "tomato");

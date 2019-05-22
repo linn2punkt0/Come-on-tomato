@@ -6,21 +6,30 @@ class Seagull extends Phaser.GameObjects.Sprite {
     super(scene, x, y, texture);
     this.scene = scene;
     // scene.add.existing(this);
-    this.seagull = this.scene.physics.add.sprite(this.x, this.y, "rat");
-    this.seagull.setScale(0.1);
-
-    this.seagull.setCollideWorldBounds(false);
+    this.seagull = this.scene.physics.add.staticSprite(
+      this.x,
+      this.y,
+      "seagull"
+    );
+    this.seagull.setScale(0.2);
   }
 
   preload() {}
 
-  create() {
-    // this.rat = this.scene.physics.add.staticSprite(this.x, this.y, "rat");
-    // this.rat.setScale(0.1);
-  }
+  create() {}
 
   update() {
-    this.seagull.x -= 1;
+    console.log(this.seagull.x);
+    this.seagull.x -= 2;
+    if (this.seagull.x > 800) {
+      this.seagull.y += 2;
+    } else if (this.seagull.x < 800) {
+      if (this.seagull.x > 600) {
+        this.seagull.y -= 2;
+      } else if (this.seagull.x < 400) {
+        this.seagull.y += 2;
+      }
+    }
   }
 }
 
