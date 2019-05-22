@@ -71,14 +71,13 @@ class Game extends Phaser.Scene {
   update() {
     this.tomato.update();
     this.rat.update();
-
-    // Switch scene if game is over
+    
+    //Changing scene on game over
     if (this.gameOver) {
-      this.tomato.tomato.setTint(0x2a0000);
-      // this.scene.stop("Game");
+      this.tomato.tomato.setTint(0x2A0000);
       this.scene.transition({
         target: "GameOver",
-        duration: 500
+        duration: 300,
       });
     }
   }
