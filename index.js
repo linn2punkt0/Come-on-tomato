@@ -4,8 +4,8 @@ import GameOver from "./scenes/GameOver";
 
 const config = {
   type: Phaser.AUTO,
-  width: window.innerWidth,
-  height: window.innerHeight,
+  width: 1400,
+  height: 700,
   physics: {
     default: "arcade",
     arcade: {
