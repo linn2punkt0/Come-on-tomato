@@ -28,21 +28,19 @@ class GameOver extends Phaser.Scene {
     this.gameOverText.setOrigin(0.5);
 
     //Play again text
-    this.restartText = this.add.text(450, 550, "Press space to play again", {
+    this.restartText = this.add.text(450, 550, "Press R to play again", {
       font: "20px",
       align: 'center',
     });
     this.restartText.setOrigin(0.5);
 
-    this.cursors = this.input.keyboard.createCursorKeys();
+    // this.cursors = this.input.keyboard.createCursorKeys();
+    this.input.keyboard.on('keyup_R', function(e) {
+      this.scene.start("Game");
+    }, this);
   }
 
   update() {
-    //Changing scene to game on space tap
-    if (this.cursors.space.isDown) {
-      this.scene.start("Game");
-      console.log(this.cursors);
-    }
   }
 }
 
