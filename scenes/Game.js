@@ -54,7 +54,7 @@ class Game extends Phaser.Scene {
       setTimeout(() => {
         const randomPoint = Phaser.Math.Between(0, 2000);
         this.seagulls.add(
-          new Seagull(this, randomPoint + 1000, 100, "seagull")
+          new Seagull(this, (randomPoint + 1000), 100, "seagull")
         );
         createSeagull();
       }, Math.random() * 4000);
