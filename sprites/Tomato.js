@@ -36,7 +36,6 @@ class Tomato extends Phaser.GameObjects.Sprite {
 
     if (this.cursors.space.isDown) {
       this.tomato.y -= 15;
-      console.log("space");
     }
 
     if (this.cursors.right.isDown) {

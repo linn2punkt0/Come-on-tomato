@@ -17,7 +17,6 @@ class Seagull extends Phaser.GameObjects.Sprite {
   create() {}
 
   update() {
-    console.log(this.seagull.x);
     this.seagull.x -= 2;
     if (this.seagull.x > 800) {
       this.seagull.y += 2;
