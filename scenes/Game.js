@@ -142,6 +142,12 @@ class Game extends Phaser.Scene {
 
     if (this.tomato.tomato.x >= 2960) {
       console.log("winner");
+      this.scene.stop("Game");
+
+      this.scene.transition({
+        target: "Winner",
+        duration: 500
+      });
     }
   }
 }

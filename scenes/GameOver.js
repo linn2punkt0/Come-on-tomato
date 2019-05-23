@@ -1,4 +1,4 @@
-import Phaser from 'phaser';
+import Phaser from "phaser";
 import SmashedTomato from "../images/smashedTomato.png";
 import SmashedTomato2 from "../images/smashedTomato2.png";
 
@@ -7,7 +7,6 @@ class GameOver extends Phaser.Scene {
     super({
       key: "GameOver"
     });
-
   }
 
   preload() {
@@ -21,27 +20,30 @@ class GameOver extends Phaser.Scene {
     // const smashedTomato2 = this.add.image(150, 400, "smashedTomato2");
 
     //Game over text
-    this.gameOverText = this.add.text(450, 200, " Come on, catch up!", {
+    this.gameOverText = this.add.text(700, 200, " Come on, catch up!", {
       font: "80px Impact",
-      align: 'center',
+      align: "center"
     });
     this.gameOverText.setOrigin(0.5);
 
     //Play again text
-    this.restartText = this.add.text(450, 550, "Press R to play again", {
+    this.restartText = this.add.text(700, 550, "Press R to play again", {
       font: "20px",
-      align: 'center',
+      align: "center"
     });
     this.restartText.setOrigin(0.5);
 
     //Restarting game on key press R
-    this.input.keyboard.on('keyup_R', function(e) {
-      this.scene.start("Game");
-    }, this);
+    this.input.keyboard.on(
+      "keyup_R",
+      function(e) {
+        this.scene.start("Game");
+      },
+      this
+    );
   }
 
-  update() {
-  }
+  update() {}
 }
 
 export default GameOver;
