@@ -34,7 +34,7 @@ class GameOver extends Phaser.Scene {
     });
     this.restartText.setOrigin(0.5);
 
-    // this.cursors = this.input.keyboard.createCursorKeys();
+    //Restarting game on key press R
     this.input.keyboard.on('keyup_R', function(e) {
       this.scene.start("Game");
     }, this);
