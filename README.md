@@ -21,5 +21,6 @@ Navigate with the left and right arrows and jump with spacebar.
 - Seagull: Graphics Designed By 黑色 from https://pngtree.com/freepng/flying-seagull_201203.html, edited by us
 - Tomato can: https://www.freepik.com/free-photos-vectors/food Designed by brgfx / Freepik - www.freepik.com
 - Ketchup bottle: Graphics from https://pngtree.com/freepng/tomato-sauce-free-button-elements_3079068.html pngtree.com
+- Winner tomato: Vector Designed By ku from https://pngtree.com/freepng/smiley-cartoon-red-tomatoes_1509740.html
 
 ## Pull request log:
