@@ -44,8 +44,19 @@ class Game extends Phaser.Scene {
 
     // Add enemy sprites
     this.rat = new Rat(this, 400, 550, "rat");
-    this.seagull = new Seagull(this, 1000, 100, "seagull");
+    // this.seagull = new Seagull(this, 1000, 100, "seagull");
 
+    this.seagulls = this.add.group();
+    const createSeagull = () => {
+      setTimeout(() => {
+        const randomPoint = Phaser.Math.Between(0, 2000);
+        this.seagulls.add(
+          new Seagull(this, randomPoint + 1000, 100, "seagull")
+        );
+        createSeagull();
+      }, Math.random() * 4000);
+    };
+    createSeagull();
     //Create and add can sprites to group
     this.cans = this.add.group();
 
@@ -55,7 +66,7 @@ class Game extends Phaser.Scene {
       this.can = new Can(this, xValue, yValue, "can");
       this.cans.add(this.can);
     }
-    
+
     // Add tomato sprite
     this.tomato = new Tomato(this, 100, 570, "tomato");
 
@@ -64,14 +75,20 @@ class Game extends Phaser.Scene {
       this.gameOver = true;
     });
     // Looping through cans and check for tomato collision
-    this.cans.children.entries.forEach((can) => {
+    this.cans.children.entries.forEach(can => {
       this.physics.add.collider(this.tomato.tomato, can.can, () => {
-          this.gameOver = true;
+        this.gameOver = true;
       });
     });
-    this.physics.add.collider(this.seagull.seagull, this.tomato.tomato, () => {
-      this.gameOver = true;
+
+    this.seagulls.children.entries.forEach(seagull => {
+      this.physics.add.collider(this.tomato.tomato, seagull.seagull, () => {
+        this.gameOver = true;
+      });
     });
+    // this.physics.add.collider(this.seagull.seagull, this.tomato.tomato, () => {
+    //   this.gameOver = true;
+    // });
 
     this.physics.add.collider(this.tomato.tomato, platforms, () => {
       // console.log("hit ground");
@@ -92,15 +109,23 @@ class Game extends Phaser.Scene {
   update() {
     this.tomato.update();
     this.rat.update();
-    this.seagull.update();
+    // this.seagull.update();
 
     //Breaking update of cans if game over
     try {
-      this.cans.getChildren().forEach((can) => {
+      this.cans.getChildren().forEach(can => {
         can.update();
       });
+    } catch (e) {
+      if (e === TypeError);
     }
-    catch (e) {
+
+    // Seagulls
+    try {
+      this.seagulls.getChildren().forEach(seagull => {
+        seagull.update();
+      });
+    } catch (e) {
       if (e === TypeError);
     }
 
