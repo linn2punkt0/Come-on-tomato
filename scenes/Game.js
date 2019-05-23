@@ -42,6 +42,9 @@ class Game extends Phaser.Scene {
     // Game over
     this.gameOver = false;
 
+    // Add tomato sprite
+    this.tomato = new Tomato(this, 100, 570, "tomato");
+
     // Add enemy sprites
     this.rat = new Rat(this, 400, 550, "rat");
     // this.seagull = new Seagull(this, 1000, 100, "seagull");
@@ -70,7 +73,7 @@ class Game extends Phaser.Scene {
     // Add tomato sprite
     this.tomato = new Tomato(this, 100, 570, "tomato");
 
-    // Add collider
+    // Add colliders
     this.physics.add.collider(this.rat.rat, this.tomato.tomato, () => {
       this.gameOver = true;
     });
