@@ -55,11 +55,7 @@ class Game extends Phaser.Scene {
       this.can = new Can(this, xValue, yValue, "can");
       this.cans.add(this.can);
     }
-    console.log(this.cans)
-    // this.can2 = new Can(this, value, -800, "can");
-    // this.can3 = new Can(this, value, -1200, "can");
-    // this.can4 = new Can(this, value, -1400, "can");
-    // this.can5 = new Can(this, value, -1600, "can");
+    console.log(this.cans);
 
     // Add tomato sprite
     this.tomato = new Tomato(this, 100, 570, "tomato");
