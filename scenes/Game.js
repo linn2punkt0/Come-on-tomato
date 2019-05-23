@@ -86,7 +86,7 @@ class Game extends Phaser.Scene {
       });
     }
 
-    if (this.tomato.tomato.x == 2960) {
+    if (this.tomato.tomato.x >= 2960) {
       console.log("winner");
     }
   }
