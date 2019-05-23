@@ -10,6 +10,7 @@ class Seagull extends Phaser.GameObjects.Sprite {
     this.seagull.setScale(0.2);
     this.seagull.setCollideWorldBounds(false);
     this.seagull.body.setAllowGravity(false);
+    this.direction = 2;
   }
 
   preload() {}
@@ -18,14 +19,12 @@ class Seagull extends Phaser.GameObjects.Sprite {
 
   update() {
     this.seagull.x -= 2;
-    if (this.seagull.x > 800) {
-      this.seagull.y += 2;
-    } else if (this.seagull.x < 800) {
-      if (this.seagull.x > 600) {
-        this.seagull.y -= 2;
-      } else if (this.seagull.x < 400) {
-        this.seagull.y += 2;
-      }
+    this.seagull.y += this.direction;
+
+    if (this.seagull.y > 550) {
+      this.direction = -2;
+    } else if (this.seagull.y < 0) {
+      this.direction = 2;
     }
   }
 }
