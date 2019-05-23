@@ -50,13 +50,12 @@ class Game extends Phaser.Scene {
     this.cans = this.add.group();
 
     for (let i = 0; i < 10; i++) {
-      var xValue = Phaser.Math.Between(300, 1000);
-      var yValue = Phaser.Math.Between(-700, -1500);
+      var xValue = Phaser.Math.Between(500, 2000);
+      var yValue = Phaser.Math.Between(-1000, -2000);
       this.can = new Can(this, xValue, yValue, "can");
       this.cans.add(this.can);
     }
-    console.log(this.cans);
-
+    
     // Add tomato sprite
     this.tomato = new Tomato(this, 100, 570, "tomato");
 
