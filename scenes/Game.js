@@ -47,16 +47,15 @@ class Game extends Phaser.Scene {
     this.seagull = new Seagull(this, 1000, 100, "seagull");
 
     //Create and add can sprites to group
-    this.can1 = new Can(this, 600, -700, "can");
-    this.can2 = new Can(this, 800, -800, "can");
-    this.can3 = new Can(this, 600, -1000, "can");
-    this.can4 = new Can(this, 1000, -1200, "can");
-
     this.cans = this.add.group();
-    this.cans.add(this.can1);
-    this.cans.add(this.can2);
-    this.cans.add(this.can3);
-    this.cans.add(this.can4);
+
+    for (let i = 0; i < 10; i++) {
+      var xValue = Phaser.Math.Between(300, 1000);
+      var yValue = Phaser.Math.Between(-700, -1500);
+      this.can = new Can(this, xValue, yValue, "can");
+      this.cans.add(this.can);
+    }
+    console.log(this.cans);
 
     // Add tomato sprite
     this.tomato = new Tomato(this, 100, 570, "tomato");
