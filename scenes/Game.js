@@ -10,6 +10,9 @@ import Can from "../sprites/Can";
 import CanImg from "../images/tomatoCan.png";
 import SeagullImg from "../images/demonSeagull2.png";
 import Seagull from "../sprites/Seagull";
+import TrafficLightImg from "../images/trafficLight.png";
+import CarImg from "../images/car1.png";
+import Car from "../sprites/Car";
 
 class Game extends Phaser.Scene {
   constructor() {
@@ -26,6 +29,7 @@ class Game extends Phaser.Scene {
     this.load.image("can", CanImg);
     this.load.image("ground", Ground);
     this.load.image("seagull", SeagullImg);
+      this.load.image("car", CarImg);
   }
   create() {
     // Add city background, sky and ground
@@ -37,9 +41,12 @@ class Game extends Phaser.Scene {
     platforms
       .create(1200, 780, "ground")
       .setScale(3)
+      .refreshBody()
+      .create(1200, 780, "trafficLight")
+      .setScale(3)
       .refreshBody();
 
-    // Game over
+    // Defining game over
     this.gameOver = false;
 
     // Add tomato sprite
@@ -49,17 +56,18 @@ class Game extends Phaser.Scene {
     this.rat = new Rat(this, 400, 550, "rat");
     // this.seagull = new Seagull(this, 1000, 100, "seagull");
 
-    this.seagulls = this.add.group();
-    const createSeagull = () => {
-      setTimeout(() => {
-        const randomPoint = Phaser.Math.Between(0, 2000);
-        this.seagulls.add(
-          new Seagull(this, randomPoint + 1000, 100, "seagull")
-        );
-        createSeagull();
-      }, Math.random() * 4000);
-    };
-    createSeagull();
+    // this.seagulls = this.add.group();
+    // const createSeagull = () => {
+    //   setTimeout(() => {
+    //     const randomPoint = Phaser.Math.Between(0, 2000);
+    //     this.seagulls.add(
+    //       new Seagull(this, randomPoint + 1000, 100, "seagull")
+    //     );
+    //     createSeagull();
+    //   }, Math.random() * 4000);
+    // };
+    // createSeagull();
+
     //Create and add can sprites to group
     this.cans = this.add.group();
 
@@ -69,6 +77,8 @@ class Game extends Phaser.Scene {
       this.can = new Can(this, xValue, yValue, "can");
       this.cans.add(this.can);
     }
+
+    this.car = new Car(this, 700, 550, "car");
 
     // Add colliders
     this.physics.add.collider(this.rat.rat, this.tomato.tomato, () => {
@@ -81,19 +91,26 @@ class Game extends Phaser.Scene {
       });
     });
 
-    this.seagulls.children.entries.forEach(seagull => {
-      this.physics.add.collider(this.tomato.tomato, seagull.seagull, () => {
-        this.gameOver = true;
-      });
-    });
+    // this.seagulls.children.entries.forEach(seagull => {
+    //   this.physics.add.collider(this.tomato.tomato, seagull.seagull, () => {
+    //     this.gameOver = true;
+    //   });
+    // });
     // this.physics.add.collider(this.seagull.seagull, this.tomato.tomato, () => {
     //   this.gameOver = true;
     // });
+
+    this.physics.add.collider(this.car.car, this.tomato.tomato, () => {
+      this.gameOver = true;
+    });
 
     this.physics.add.collider(this.tomato.tomato, platforms, () => {
       // console.log("hit ground");
     });
     this.physics.add.collider(this.rat.rat, platforms, () => {
+      // console.log("hit ground");
+    });
+    this.physics.add.collider(this.car.car, platforms, () => {
       // console.log("hit ground");
     });
 
@@ -111,7 +128,7 @@ class Game extends Phaser.Scene {
     this.rat.update();
     // this.seagull.update();
 
-    //Breaking update of cans if game over
+    //Cans - Breaking update of cans if game over
     try {
       this.cans.getChildren().forEach(can => {
         can.update();
@@ -128,6 +145,9 @@ class Game extends Phaser.Scene {
     } catch (e) {
       if (e === TypeError);
     }
+
+    // Car
+    this.car.update();
 
     //Changing scene on game over
     if (this.gameOver) {
