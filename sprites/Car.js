@@ -10,6 +10,8 @@ class Car extends Phaser.GameObjects.Sprite {
     this.car.setScale(0.15);
 
     this.car.setCollideWorldBounds(true);
+    this.car.body.setVelocityX(-50);
+    this.car.setBounce(0);
   }
 
   preload() {}
@@ -18,6 +20,8 @@ class Car extends Phaser.GameObjects.Sprite {
   }
 
   update() {
+    // this.car.x -= 1;
+
   }
 }
 
