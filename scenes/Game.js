@@ -14,6 +14,8 @@ import CarImg from "../images/car1.png";
 import Car from "../sprites/Car";
 import TrafficLightImg from "../images/trafficLight.png";
 import TrafficLight from "../sprites/TrafficLight";
+import FinishImg from "../images/finish.png";
+import Finish from "../sprites/Finish";
 
 class Game extends Phaser.Scene {
   constructor() {
@@ -32,6 +34,7 @@ class Game extends Phaser.Scene {
     this.load.image("seagull", SeagullImg);
     this.load.image("car", CarImg);
     this.load.image("trafficLight", TrafficLightImg);
+    this.load.image("finish", FinishImg);
   }
   create() {
     // Add city background, sky and ground
@@ -78,9 +81,11 @@ class Game extends Phaser.Scene {
       this.cans.add(this.can);
     }
 
+    this.trafficLight = new TrafficLight(this, 2100, 500, "trafficLight");
+
     this.car = new Car(this, 2500, 550, "car");
 
-    this.trafficLight = new TrafficLight(this, 1800, 500, "trafficLight");
+    this.finish = new Finish(this, 2960, 500, "finish");
 
     // Add colliders
     this.physics.add.collider(this.rat.rat, this.tomato.tomato, () => {
@@ -106,8 +111,12 @@ class Game extends Phaser.Scene {
       this.gameOver = true;
     });
     this.physics.add.collider(this.car.car, this.trafficLight.trafficLight, () => {
-      this.car.car.body.setVelocityX(+50);
+      this.car.car.body.setVelocityX(+100);
       this.trafficLight.trafficLight.body.setVelocityX(0);
+    });
+    this.physics.add.collider(this.car.car, this.finish.finish, () => {
+      this.car.car.body.setVelocityX(-100);
+      this.finish.finish.body.setVelocityX(0);
     });
 
     this.physics.add.collider(this.tomato.tomato, platforms, () => {
@@ -149,12 +158,6 @@ class Game extends Phaser.Scene {
     } catch (e) {
       if (e === TypeError);
     }
-
-    // Car
-    this.car.update();
-
-    // TrafficLight
-    this.trafficLight.update()
 
     //Changing scene on game over
     if (this.gameOver) {
