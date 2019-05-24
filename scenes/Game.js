@@ -10,9 +10,10 @@ import Can from "../sprites/Can";
 import CanImg from "../images/tomatoCan.png";
 import SeagullImg from "../images/demonSeagull2.png";
 import Seagull from "../sprites/Seagull";
-import TrafficLightImg from "../images/trafficLight.png";
 import CarImg from "../images/car1.png";
 import Car from "../sprites/Car";
+import TrafficLightImg from "../images/trafficLight.png";
+import TrafficLight from "../sprites/TrafficLight";
 
 class Game extends Phaser.Scene {
   constructor() {
@@ -29,7 +30,8 @@ class Game extends Phaser.Scene {
     this.load.image("can", CanImg);
     this.load.image("ground", Ground);
     this.load.image("seagull", SeagullImg);
-      this.load.image("car", CarImg);
+    this.load.image("car", CarImg);
+    this.load.image("trafficLight", TrafficLightImg);
   }
   create() {
     // Add city background, sky and ground
@@ -40,9 +42,6 @@ class Game extends Phaser.Scene {
     const platforms = this.physics.add.staticGroup();
     platforms
       .create(1200, 780, "ground")
-      .setScale(3)
-      .refreshBody()
-      .create(1200, 780, "trafficLight")
       .setScale(3)
       .refreshBody();
 
@@ -56,17 +55,18 @@ class Game extends Phaser.Scene {
     this.rat = new Rat(this, 400, 550, "rat");
     // this.seagull = new Seagull(this, 1000, 100, "seagull");
 
-    // this.seagulls = this.add.group();
-    // const createSeagull = () => {
-    //   setTimeout(() => {
-    //     const randomPoint = Phaser.Math.Between(0, 2000);
-    //     this.seagulls.add(
-    //       new Seagull(this, randomPoint + 1000, 100, "seagull")
-    //     );
-    //     createSeagull();
-    //   }, Math.random() * 4000);
-    // };
-    // createSeagull();
+    this.seagulls = this.add.group();
+
+    const createSeagull = () => {
+      setTimeout(() => {
+        const randomPoint = Phaser.Math.Between(0, 2000);
+        this.seagulls.add(
+          new Seagull(this, randomPoint + 1000, 100, "seagull")
+        );
+        createSeagull();
+      }, Math.random() * 4000);
+    };
+    createSeagull();
 
     //Create and add can sprites to group
     this.cans = this.add.group();
@@ -78,7 +78,9 @@ class Game extends Phaser.Scene {
       this.cans.add(this.can);
     }
 
-    this.car = new Car(this, 700, 550, "car");
+    this.car = new Car(this, 2500, 550, "car");
+
+    this.trafficLight = new TrafficLight(this, 1800, 500, "trafficLight");
 
     // Add colliders
     this.physics.add.collider(this.rat.rat, this.tomato.tomato, () => {
@@ -91,17 +93,21 @@ class Game extends Phaser.Scene {
       });
     });
 
-    // this.seagulls.children.entries.forEach(seagull => {
-    //   this.physics.add.collider(this.tomato.tomato, seagull.seagull, () => {
-    //     this.gameOver = true;
-    //   });
-    // });
-    // this.physics.add.collider(this.seagull.seagull, this.tomato.tomato, () => {
-    //   this.gameOver = true;
-    // });
+    this.seagulls.children.entries.forEach(seagull => {
+      this.physics.add.collider(this.tomato.tomato, seagull, () => {
+        this.gameOver = true;
+      });
+    });
 
     this.physics.add.collider(this.car.car, this.tomato.tomato, () => {
       this.gameOver = true;
+    });
+    this.physics.add.collider(this.tomato.tomato, this.trafficLight.trafficLight, () => {
+      this.gameOver = true;
+    });
+    this.physics.add.collider(this.car.car, this.trafficLight.trafficLight, () => {
+      this.car.car.body.setVelocityX(+50);
+      this.trafficLight.trafficLight.body.setVelocityX(0);
     });
 
     this.physics.add.collider(this.tomato.tomato, platforms, () => {
@@ -110,9 +116,7 @@ class Game extends Phaser.Scene {
     this.physics.add.collider(this.rat.rat, platforms, () => {
       // console.log("hit ground");
     });
-    this.physics.add.collider(this.car.car, platforms, () => {
-      // console.log("hit ground");
-    });
+
 
     // Set camera
     function camera(player, scene) {
@@ -148,6 +152,9 @@ class Game extends Phaser.Scene {
 
     // Car
     this.car.update();
+
+    // TrafficLight
+    this.trafficLight.update()
 
     //Changing scene on game over
     if (this.gameOver) {
