@@ -11,17 +11,6 @@ class TrafficLight extends Phaser.GameObjects.Sprite {
 
     this.trafficLight.setCollideWorldBounds(true);
     this.trafficLight.setBounce(0);
-    // allowGravity=false
-    
-
-  }
-
-  preload() {}
-
-  create() {
-  }
-
-  update() {
   }
 }
 
