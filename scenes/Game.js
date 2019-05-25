@@ -16,6 +16,7 @@ import TrafficLightImg from "../images/trafficLight.png";
 import TrafficLight from "../sprites/TrafficLight";
 import FinishImg from "../images/finish.png";
 import Finish from "../sprites/Finish";
+import BackgroundSound from "../sound/background.mp3";
 
 class Game extends Phaser.Scene {
   constructor() {
@@ -35,6 +36,8 @@ class Game extends Phaser.Scene {
     this.load.image("car", CarImg);
     this.load.image("trafficLight", TrafficLightImg);
     this.load.image("finish", FinishImg);
+
+    this.load.audio("backgroundSound", BackgroundSound);
   }
   create() {
     // Add city background, sky and ground
@@ -51,6 +54,13 @@ class Game extends Phaser.Scene {
     // Defining game over
     this.gameOver = false;
 
+    // Add soundeffects
+   this.sound.add("backgroundSound");
+   this.sound.play('backgroundSound', {
+      loop:true,
+      volume: 2
+    });
+
     // Add tomato sprite
     this.tomato = new Tomato(this, 100, 570, "tomato");
 
@@ -60,16 +70,15 @@ class Game extends Phaser.Scene {
 
     this.seagulls = this.add.group();
 
-    const createSeagull = () => {
-      setTimeout(() => {
-        const randomPoint = Phaser.Math.Between(0, 2000);
+    for (let z = 0; z < 20; z++){
+
+        const randomPoint = Phaser.Math.Between(0, 2900);
+        const yrand = Phaser.Math.Between(-100, -2000 )
+
         this.seagulls.add(
-          new Seagull(this, randomPoint + 1000, 100, "seagull")
+          new Seagull(this, randomPoint + 1000, yrand)
         );
-        createSeagull();
-      }, Math.random() * 4000);
     };
-    createSeagull();
 
     //Create and add can sprites to group
     this.cans = this.add.group();
@@ -99,7 +108,7 @@ class Game extends Phaser.Scene {
     });
 
     this.seagulls.children.entries.forEach(seagull => {
-      this.physics.add.collider(this.tomato.tomato, seagull, () => {
+          this.physics.add.collider(this.tomato.tomato, seagull.seagull, () => {
         this.gameOver = true;
       });
     });
