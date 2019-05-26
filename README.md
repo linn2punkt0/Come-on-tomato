@@ -15,6 +15,11 @@ Navigate with the left and right arrows and jump with spacebar.
 
 ## Tested by
 
+Tester from our class:
+-
+-
+
+Testers without programming knowledge:
 - Lena Svensson
 - Mikael Johansson
 - Robert Berger
@@ -28,7 +33,13 @@ Navigate with the left and right arrows and jump with spacebar.
 - Rat: Designed By ku from https://pngtree.com/freepng/mouse-design-material_2089418.html, edited by us
 - Seagull: Graphics Designed By 黑色 from https://pngtree.com/freepng/flying-seagull_201203.html, edited by us
 - Tomato can: https://www.freepik.com/free-photos-vectors/food Designed by brgfx / Freepik - www.freepik.com
+- Car:
+- Traffic light:
+- Flag: 
 - Ketchup bottle: Graphics from https://pngtree.com/freepng/tomato-sauce-free-button-elements_3079068.html pngtree.com
 - Winner tomato: Vector Designed By ku from https://pngtree.com/freepng/smiley-cartoon-red-tomatoes_1509740.html
+- Background sound:
+- Winner sound: Recorded by Yannick Lemieux http://soundbible.com/1964-Small-Crowd-Applause.html
+- Loser sound:
 
 ## Pull request log:
