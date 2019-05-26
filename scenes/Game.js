@@ -117,13 +117,6 @@ class Game extends Phaser.Scene {
       this.gameOver = true;
     });
     this.physics.add.collider(
-      this.tomato.tomato,
-      this.trafficLight.trafficLight,
-      () => {
-        this.gameOver = true;
-      }
-    );
-    this.physics.add.collider(
       this.car.car,
       this.trafficLight.trafficLight,
       () => {
@@ -183,7 +176,8 @@ class Game extends Phaser.Scene {
       });
     }
 
-    if (this.tomato.tomato.x >= 2960) {
+    if (this.tomato.tomato.x >= 2960 && this.tomato.tomato.y >= 500) {
+      console.log(this.tomato.tomato.y)
       this.scene.stop("Game");
       this.music.stop();
       this.scene.transition({
