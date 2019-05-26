@@ -5,11 +5,19 @@
 ### Get the tomato through the dark city night. Danger lurks everywhere when you're a small tomato.
 Navigate with the left and right arrows and jump with spacebar.
 
-#### Play online here: 
+#### Play online here: https://come-on-tomato.netlify.com
 
 ## Installation
+- clone this repository
+- run: npm install in the repositoy folder in your terminal
+- run: npm run dev in your terminal
+- you shold now be able to test the game at: http://localhost:1234/
 
 ## Tested by
+
+- Lena Svensson
+- Mikael Johansson
+- Robert Berger
 
 ## Feedback from group 13
 
