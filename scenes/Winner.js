@@ -1,5 +1,6 @@
 import Phaser from "phaser";
 import Tomato from "../images/winnerTomato.png";
+import Applause from "../sound/applause.mp3";
 
 class Winner extends Phaser.Scene {
   constructor() {
@@ -10,6 +11,7 @@ class Winner extends Phaser.Scene {
 
   preload() {
     this.load.image("Tomato", Tomato);
+    this.load.audio("Applause", Applause);
   }
 
   create() {
@@ -21,6 +23,13 @@ class Winner extends Phaser.Scene {
       align: "center"
     });
     this.winnerText.setOrigin(0.5);
+
+    // Add soundeffects
+    this.applause = this.sound.add("Applause");
+    this.applause.play({
+      loop: false,
+      volume: 2
+    });
 
     // Play again text
     this.restartText = this.add.text(700, 550, "Want to play again? Press R", {

@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 import SmashedTomato from "../images/smashedTomato.png";
 import SmashedTomato2 from "../images/smashedTomato2.png";
+import Splash from "../sound/splash.mp3";
 
 class GameOver extends Phaser.Scene {
   constructor() {
@@ -11,6 +12,7 @@ class GameOver extends Phaser.Scene {
 
   preload() {
     this.load.image("smashedTomato", SmashedTomato);
+    this.load.audio("splash", Splash);
   }
 
   create() {
@@ -25,6 +27,13 @@ class GameOver extends Phaser.Scene {
       align: "center"
     });
     this.gameOverText.setOrigin(0.5);
+
+    // Add soundeffects
+    this.splash = this.sound.add("splash");
+    this.splash.play({
+      loop: false,
+      volume: 2
+    });
 
     //Play again text
     this.restartText = this.add.text(700, 550, "Press R to play again", {

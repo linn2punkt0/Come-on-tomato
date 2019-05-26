@@ -55,8 +55,8 @@ class Game extends Phaser.Scene {
     this.gameOver = false;
 
     // Add soundeffects
-    this.sound.add("backgroundSound");
-    this.sound.play("backgroundSound", {
+    this.music = this.sound.add("backgroundSound");
+    this.music.play({
       loop: true,
       volume: 2
     });
@@ -176,7 +176,7 @@ class Game extends Phaser.Scene {
     if (this.gameOver) {
       this.tomato.tomato.setTint(0x2a0000);
       this.scene.stop("Game");
-
+      this.music.stop();
       this.scene.transition({
         target: "GameOver",
         duration: 500
@@ -184,9 +184,8 @@ class Game extends Phaser.Scene {
     }
 
     if (this.tomato.tomato.x >= 2960) {
-      console.log("winner");
       this.scene.stop("Game");
-
+      this.music.stop();
       this.scene.transition({
         target: "Winner",
         duration: 500
