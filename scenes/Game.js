@@ -55,9 +55,9 @@ class Game extends Phaser.Scene {
     this.gameOver = false;
 
     // Add soundeffects
-   this.sound.add("backgroundSound");
-   this.sound.play('backgroundSound', {
-      loop:true,
+    this.music = this.sound.add("backgroundSound");
+    this.music.play({
+      loop: true,
       volume: 2
     });
 
@@ -70,15 +70,12 @@ class Game extends Phaser.Scene {
 
     this.seagulls = this.add.group();
 
-    for (let z = 0; z < 20; z++){
+    for (let z = 0; z < 20; z++) {
+      const randomPoint = Phaser.Math.Between(0, 2900);
+      const yrand = Phaser.Math.Between(-100, -2000);
 
-        const randomPoint = Phaser.Math.Between(0, 2900);
-        const yrand = Phaser.Math.Between(-100, -2000 )
-
-        this.seagulls.add(
-          new Seagull(this, randomPoint + 1000, yrand)
-        );
-    };
+      this.seagulls.add(new Seagull(this, randomPoint + 1000, yrand));
+    }
 
     //Create and add can sprites to group
     this.cans = this.add.group();
@@ -108,7 +105,7 @@ class Game extends Phaser.Scene {
     });
 
     this.seagulls.children.entries.forEach(seagull => {
-          this.physics.add.collider(this.tomato.tomato, seagull.seagull, () => {
+      this.physics.add.collider(this.tomato.tomato, seagull.seagull, () => {
         this.gameOver = true;
       });
     });
@@ -116,13 +113,21 @@ class Game extends Phaser.Scene {
     this.physics.add.collider(this.car.car, this.tomato.tomato, () => {
       this.gameOver = true;
     });
-    this.physics.add.collider(this.tomato.tomato, this.trafficLight.trafficLight, () => {
-      this.gameOver = true;
-    });
-    this.physics.add.collider(this.car.car, this.trafficLight.trafficLight, () => {
-      this.car.car.body.setVelocityX(+100);
-      this.trafficLight.trafficLight.body.setVelocityX(0);
-    });
+    this.physics.add.collider(
+      this.tomato.tomato,
+      this.trafficLight.trafficLight,
+      () => {
+        this.gameOver = true;
+      }
+    );
+    this.physics.add.collider(
+      this.car.car,
+      this.trafficLight.trafficLight,
+      () => {
+        this.car.car.body.setVelocityX(+100);
+        this.trafficLight.trafficLight.body.setVelocityX(0);
+      }
+    );
     this.physics.add.collider(this.car.car, this.finish.finish, () => {
       this.car.car.body.setVelocityX(-100);
       this.finish.finish.body.setVelocityX(0);
@@ -134,7 +139,6 @@ class Game extends Phaser.Scene {
     this.physics.add.collider(this.rat.rat, platforms, () => {
       // console.log("hit ground");
     });
-
 
     // Set camera
     function camera(player, scene) {
@@ -172,7 +176,7 @@ class Game extends Phaser.Scene {
     if (this.gameOver) {
       this.tomato.tomato.setTint(0x2a0000);
       this.scene.stop("Game");
-
+      this.music.stop();
       this.scene.transition({
         target: "GameOver",
         duration: 500
@@ -180,9 +184,8 @@ class Game extends Phaser.Scene {
     }
 
     if (this.tomato.tomato.x >= 2960) {
-      console.log("winner");
       this.scene.stop("Game");
-
+      this.music.stop();
       this.scene.transition({
         target: "Winner",
         duration: 500

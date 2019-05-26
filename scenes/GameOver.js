@@ -26,6 +26,13 @@ class GameOver extends Phaser.Scene {
     });
     this.gameOverText.setOrigin(0.5);
 
+    // Add soundeffects
+    //  this.music = this.sound.add("loserSound");
+    //  this.music.play({
+    //    loop: false,
+    //    volume: 2
+    //  });
+
     //Play again text
     this.restartText = this.add.text(700, 550, "Press R to play again", {
       font: "20px",
