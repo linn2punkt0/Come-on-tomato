@@ -143,28 +143,6 @@ class Game extends Phaser.Scene {
   }
 
   update() {
-    this.tomato.update();
-    this.rat.update();
-    this.secondRat.update();
-
-    //Cans - Breaking update of cans if game over
-    try {
-      this.cans.getChildren().forEach(can => {
-        can.update();
-      });
-    } catch (e) {
-      if (e === TypeError);
-    }
-
-    // Seagulls
-    try {
-      this.seagulls.getChildren().forEach(seagull => {
-        seagull.update();
-      });
-    } catch (e) {
-      if (e === TypeError);
-    }
-
     //Changing scene on game over
     if (this.gameOver) {
       this.tomato.tomato.setTint(0x2a0000);
@@ -174,16 +152,41 @@ class Game extends Phaser.Scene {
         target: "GameOver",
         duration: 500
       });
+      this.gameOver = false;
     }
 
-    if (this.tomato.tomato.x >= 2960 && this.tomato.tomato.y >= 500) {
-      console.log(this.tomato.tomato.y)
-      this.scene.stop("Game");
-      this.music.stop();
-      this.scene.transition({
-        target: "Winner",
-        duration: 500
-      });
+    else {
+      this.tomato.update();
+      this.rat.update();
+      this.secondRat.update();
+
+      //Cans - Breaking update of cans if game over
+      try {
+        this.cans.getChildren().forEach(can => {
+          can.update();
+        });
+      } catch (e) {
+        if (e === TypeError);
+      }
+
+      // Seagulls
+      try {
+        this.seagulls.getChildren().forEach(seagull => {
+          seagull.update();
+        });
+      } catch (e) {
+        if (e === TypeError);
+      }
+
+      if (this.tomato.tomato.x >= 2960 && this.tomato.tomato.y >= 500) {
+        console.log(this.tomato.tomato.y)
+        this.scene.stop("Game");
+        this.music.stop();
+        this.scene.transition({
+          target: "Winner",
+          duration: 500
+        });
+      }
     }
   }
 }
