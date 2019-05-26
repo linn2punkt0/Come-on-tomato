@@ -22,7 +22,7 @@ class GameOver extends Phaser.Scene {
     // const smashedTomato2 = this.add.image(150, 400, "smashedTomato2");
 
     //Game over text
-    this.gameOverText = this.add.text(700, 200, " Come on, catch up!", {
+    this.gameOverText = this.add.text(640, 200, " Come on, catch up!", {
       font: "80px Impact",
       align: "center"
     });
@@ -36,7 +36,7 @@ class GameOver extends Phaser.Scene {
     });
 
     //Play again text
-    this.restartText = this.add.text(700, 550, "Press R to play again", {
+    this.restartText = this.add.text(640, 550, "Press R to play again", {
       font: "20px",
       align: "center"
     });

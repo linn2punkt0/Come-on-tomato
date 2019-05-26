@@ -18,7 +18,7 @@ class Winner extends Phaser.Scene {
     const tomato = this.add.image(150, 400, "Tomato");
     tomato.setScale(0.6);
     // Winner text
-    this.winnerText = this.add.text(700, 200, "You won!", {
+    this.winnerText = this.add.text(640, 200, "You won!", {
       font: "80px Impact",
       align: "center"
     });
@@ -32,7 +32,7 @@ class Winner extends Phaser.Scene {
     });
 
     // Play again text
-    this.restartText = this.add.text(700, 550, "Want to play again? Press R", {
+    this.restartText = this.add.text(640, 550, "Want to play again? Press R", {
       font: "20px",
       align: "center"
     });
