@@ -16,8 +16,8 @@ Navigate with the left and right arrows and jump with spacebar.
 ## Tested by
 
 Tester from our class:
--
--
+- Ida Hallner
+- Elias Johansson
 
 Testers without programming knowledge:
 - Johanna Cederbom
