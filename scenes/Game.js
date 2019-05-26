@@ -66,7 +66,7 @@ class Game extends Phaser.Scene {
 
     // Add enemy sprites
     this.rat = new Rat(this, 400, 550, "rat");
-    // this.seagull = new Seagull(this, 1000, 100, "seagull");
+    this.secondRat = new Rat(this, 3000, 550, "rat");
 
     this.seagulls = this.add.group();
 
@@ -95,6 +95,9 @@ class Game extends Phaser.Scene {
 
     // Add colliders
     this.physics.add.collider(this.rat.rat, this.tomato.tomato, () => {
+      this.gameOver = true;
+    });
+    this.physics.add.collider(this.secondRat.rat, this.tomato.tomato, () => {
       this.gameOver = true;
     });
     // Looping through cans and check for tomato collision
@@ -133,12 +136,9 @@ class Game extends Phaser.Scene {
       this.finish.finish.body.setVelocityX(0);
     });
 
-    this.physics.add.collider(this.tomato.tomato, platforms, () => {
-      // console.log("hit ground");
-    });
-    this.physics.add.collider(this.rat.rat, platforms, () => {
-      // console.log("hit ground");
-    });
+    this.physics.add.collider(this.tomato.tomato, platforms, () => {});
+    this.physics.add.collider(this.rat.rat, platforms, () => {});
+    this.physics.add.collider(this.secondRat.rat, platforms, () => {});
 
     // Set camera
     function camera(player, scene) {
@@ -152,7 +152,7 @@ class Game extends Phaser.Scene {
   update() {
     this.tomato.update();
     this.rat.update();
-    // this.seagull.update();
+    this.secondRat.update();
 
     //Cans - Breaking update of cans if game over
     try {
