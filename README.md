@@ -7,6 +7,10 @@ Navigate with the left and right arrows and jump with spacebar.
 
 #### Play online here: https://come-on-tomato.netlify.com
 
+## Created by
+- [Linn Johansson](https://github.com/linn2punkt0?tab=repositories)
+- [Maria Eidland](https://github.com/mariaeid)
+
 ## Installation
 - clone this repository
 - run: npm install in the repositoy folder in your terminal
@@ -18,6 +22,7 @@ Navigate with the left and right arrows and jump with spacebar.
 Tester from our class:
 - Ida Hallner
 - Elias Johansson
+- Isa Areschoug
 
 Testers without programming knowledge:
 - Johanna Cederbom
@@ -45,60 +50,29 @@ Testers without programming knowledge:
 - Loser sound: Recorded by Mike Koenig  http://soundbible.com/1097-Slime-Splash.html
 
 ## Pull request log:
-[#1 Update to this.tomato instead of const + adding update function](https://github.com/linn2punkt0/Come-on-tomato/pull/1)
-[#2 Tomato](https://github.com/linn2punkt0/Come-on-tomato/pull/2) 
-added images and rat.js
-#3 by linn2punkt0 was merged 7 days ago • Approved  
- 1
-Rats
-#4 by linn2punkt0 was merged 7 days ago • Approved  
- 1
-Tomato
-#5 by mariaeid was merged 7 days ago • Approved  
- 1
-Correcting spelling error
-#6 by mariaeid was merged 7 days ago • Approved  
- 1
-added collide-function to rats
-#7 by linn2punkt0 was merged 7 days ago • Approved  
- 1
-Modified tomato jumping
-#8 by mariaeid was merged 7 days ago • Approved  
- 1
-made rat move
-#9 by linn2punkt0 was merged 7 days ago • Approved  
- 2
-Rats
-#10 by linn2punkt0 was merged 7 days ago • Approved  
- 1
-pull updates to branch
-#11 by linn2punkt0 was merged 7 days ago 
-Update from master
-#12 by mariaeid was merged 7 days ago 
-Merge pull request #12 from linn2punkt0/master
-#13 by mariaeid was closed 7 days ago • Review required  
- 1
-Update from master
-#14 by mariaeid was merged 7 days ago 
-Tomato
-#15 by mariaeid was merged 7 days ago • Approved  
- 1
-Merge pull request #15 from linn2punkt0/Tomato
-#16 by mariaeid was merged 7 days ago 
-Rats
-#17 by linn2punkt0 was merged 7 days ago • Approved  
- 1
-Merge pull request #17 from linn2punkt0/rats
-#18 by mariaeid was merged 7 days ago 
-Merge pull request #16 from linn2punkt0/master
-#19 by linn2punkt0 was closed 7 days ago • Review required  
-Rats
-#20 by linn2punkt0 was merged 7 days ago • Approved  
- 1
-pulling latest version into tomato
-#21 by linn2punkt0 was merged 7 days ago 
-update tomato branch
-#22 by linn2punkt0 was merged 7 days ago 
+- [#1 Update to this.tomato instead of const + adding update function](https://github.com/linn2punkt0/Come-on-tomato/pull/1)
+- [#2 Tomato](https://github.com/linn2punkt0/Come-on-tomato/pull/2) 
+- [#3 added images and rat.js](https://github.com/linn2punkt0/Come-on-tomato/pull/3) 
+- [#4 Rats](https://github.com/linn2punkt0/Come-on-tomato/pull/4)
+- [#5 Tomato](https://github.com/linn2punkt0/Come-on-tomato/pull/5)
+- [#6 Correcting spelling error](https://github.com/linn2punkt0/Come-on-tomato/pull/6)
+- [#7 added collide-function to rats](https://github.com/linn2punkt0/Come-on-tomato/pull/7)
+- [#8 Modified tomato jumping](https://github.com/linn2punkt0/Come-on-tomato/pull/8)
+- [#9 made rat move](https://github.com/linn2punkt0/Come-on-tomato/pull/9)
+- [#10 Rats](https://github.com/linn2punkt0/Come-on-tomato/pull/10)
+- [#11 pull updates to branch](https://github.com/linn2punkt0/Come-on-tomato/pull/11)
+- [#12 Update from master](https://github.com/linn2punkt0/Come-on-tomato/pull/12)
+- [#13 Merge pull request #12 from linn2punkt0/master](https://github.com/linn2punkt0/Come-on-tomato/pull/13)
+- [#14 Update from master](https://github.com/linn2punkt0/Come-on-tomato/pull/14)
+- [#15 Tomato](https://github.com/linn2punkt0/Come-on-tomato/pull/15)
+- [#16 Merge pull request #15 from linn2punkt0/Tomato](https://github.com/linn2punkt0/Come-on-tomato/pull/16)
+- [#17 Rats](https://github.com/linn2punkt0/Come-on-tomato/pull/17)
+- [#18 Merge pull request #17 from linn2punkt0/rats](https://github.com/linn2punkt0/Come-on-tomato/pull/18)
+- [#19 Merge pull request #16 from linn2punkt0/master](https://github.com/linn2punkt0/Come-on-tomato/pull/19)
+- [#20 Rats](https://github.com/linn2punkt0/Come-on-tomato/pull/20)
+- [#21 pulling latest version into tomato](https://github.com/linn2punkt0/Come-on-tomato/pull/21)
+- [#22 update tomato branch]
+
 Tomato- create in constructor
 #23 by linn2punkt0 was closed 7 days ago • Review required  
 Tomato
