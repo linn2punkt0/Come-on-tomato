@@ -6,7 +6,7 @@ import Winner from "./scenes/Winner";
 const config = {
   type: Phaser.AUTO,
   width: 1280,
-  height: 700,
+  height: 650,
   physics: {
     default: "arcade",
     arcade: {
