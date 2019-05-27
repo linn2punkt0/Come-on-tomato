@@ -88,49 +88,25 @@ Testers without programming knowledge:
 - [#36 Seagull](https://github.com/linn2punkt0/Come-on-tomato/pull/36)
 - [#37 updates](https://github.com/linn2punkt0/Come-on-tomato/pull/37)
 - [#38 Seagull](https://github.com/linn2punkt0/Come-on-tomato/pull/38)
-Game over img
-#39 by mariaeid was merged 5 days ago • Approved  
-updates
-#40 by linn2punkt0 was merged 5 days ago 
-Cans 
-#41 by mariaeid was merged 4 days ago • Approved  
-Update README.md 
-#42 by mariaeid was merged 4 days ago • Approved  
-Camera 
-#43 by linn2punkt0 was merged 4 days ago • Approved  
- 1
-Cans 
-#44 by mariaeid was merged 4 days ago • Approved  
-Change of cans random interval 
-#45 by mariaeid was merged 4 days ago • Approved  
-added multiple seagulls and new move pattern 
-#46 by linn2punkt0 was merged 4 days ago • Approved  
- 1
-Game scene 
-#47 by mariaeid was merged 4 days ago • Approved  
-Added parentheses on new seagull 
-#48 by mariaeid was merged 4 days ago • Approved  
-removed extra tomato 
-#49 by linn2punkt0 was merged 4 days ago • Approved  
-added winner scene 
-#50 by linn2punkt0 was merged 4 days ago • Approved  
-New car and traffic light obstacle 
-#51 by mariaeid was merged 3 days ago • Approved  
-Added background sound 
-#52 by mariaeid was merged 2 days ago • Approved  
-New setup to create group of seagulls 
-#53 by mariaeid was merged 2 days ago • Approved  
-Winner 
-#54 by linn2punkt0 was merged 13 hours ago • Approved  
- 1
-added second rat 
-#55 by linn2punkt0 was merged 13 hours ago • Approved  
- 1
-removed outline-boxes 
-#56 by linn2punkt0 was merged 13 hours ago • Approved  
-Tomato 
-#57 by mariaeid was merged 12 hours ago • Approved  
-Seagull 
-#58 by mariaeid was merged 11 hours ago • Approved  
-Tomato 
-#59 by mariaeid was merged 11 seconds ago • Approved  
+- [#39 Game over img](https://github.com/linn2punkt0/Come-on-tomato/pull/39)
+- [#40 updates](https://github.com/linn2punkt0/Come-on-tomato/pull/40)
+- [#41 Cans](https://github.com/linn2punkt0/Come-on-tomato/pull/41) 
+- [#42 Update README.md](https://github.com/linn2punkt0/Come-on-tomato/pull/42)  
+- [#43 Camera](https://github.com/linn2punkt0/Come-on-tomato/pull/43)
+- [#44 Cans](https://github.com/linn2punkt0/Come-on-tomato/pull/44)
+- [#45 Change of cans random interval](https://github.com/linn2punkt0/Come-on-tomato/pull/45)
+- [#46 added multiple seagulls and new move pattern](https://github.com/linn2punkt0/Come-on-tomato/pull/46)
+- [#47 Game scene](https://github.com/linn2punkt0/Come-on-tomato/pull/47)  
+- [#48 Added parentheses on new seagull](https://github.com/linn2punkt0/Come-on-tomato/pull/48)  
+- [#49 removed extra tomato](https://github.com/linn2punkt0/Come-on-tomato/pull/49) 
+- [#50 added winner scene](https://github.com/linn2punkt0/Come-on-tomato/pull/50)
+- [#51 New car and traffic light obstacle](https://github.com/linn2punkt0/Come-on-tomato/pull/51) 
+- [#52 Added background sound](https://github.com/linn2punkt0/Come-on-tomato/pull/52) 
+- [#53  New setup to create group of seagulls](https://github.com/linn2punkt0/Come-on-tomato/pull/53)
+- [#54 Winner](https://github.com/linn2punkt0/Come-on-tomato/pull/54)
+- [#55 added second rat](https://github.com/linn2punkt0/Come-on-tomato/pull/55)
+- [#56 removed outline-boxes](https://github.com/linn2punkt0/Come-on-tomato/pull/56)
+- [#57 Tomato](https://github.com/linn2punkt0/Come-on-tomato/pull/57) 
+- [#58 Seagull](https://github.com/linn2punkt0/Come-on-tomato/pull/58)
+- [#59 Tomato](https://github.com/linn2punkt0/Come-on-tomato/pull/59)
+
