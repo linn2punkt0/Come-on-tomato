@@ -122,3 +122,5 @@ Testers without programming knowledge:
 - [#57 Tomato](https://github.com/linn2punkt0/Come-on-tomato/pull/57)
 - [#58 Seagull](https://github.com/linn2punkt0/Come-on-tomato/pull/58)
 - [#59 Tomato](https://github.com/linn2punkt0/Come-on-tomato/pull/59)
+
+## [Feedback to group 13](https://github.com/brooman/gameover/pull/18)
