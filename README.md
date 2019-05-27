@@ -71,48 +71,23 @@ Testers without programming knowledge:
 - [#19 Merge pull request #16 from linn2punkt0/master](https://github.com/linn2punkt0/Come-on-tomato/pull/19)
 - [#20 Rats](https://github.com/linn2punkt0/Come-on-tomato/pull/20)
 - [#21 pulling latest version into tomato](https://github.com/linn2punkt0/Come-on-tomato/pull/21)
-- [#22 update tomato branch]
-
-Tomato- create in constructor
-#23 by linn2punkt0 was closed 7 days ago • Review required  
-Tomato
-#24 by linn2punkt0 was closed 6 days ago • Approved  
-Tomato
-#25
-Fixed collision rat tomato
-#26 by mariaeid was merged 6 days ago • Approved  
- 1
-Switch to game over scene on collision
-#27 by mariaeid was merged 6 days ago • Approved  
- 1
-get new updates
-#28 by linn2punkt0 was merged 6 days ago 
-Camera
-#29 by linn2punkt0 was merged 6 days ago • Approved  
-Tomato
-#30 by mariaeid was merged 6 days ago • Approved  
- 1
-Camera
-#31 by linn2punkt0 was merged 5 days ago • Approved  
- 1
-Update README.md
-#32 by mariaeid was merged 5 days ago • Approved  
-get updates to seagull
-#33 by linn2punkt0 was merged 5 days ago 
-Seagull
-#34 by linn2punkt0 was merged 5 days ago • Approved  
- 1
-made screen smaller
-#35 by linn2punkt0 was merged 5 days ago • Approved  
- 1
-Seagull
-#36 by linn2punkt0 was merged 5 days ago • Approved  
- 1
-updates
-#37 by linn2punkt0 was merged 5 days ago 
-Seagull
-#38 by linn2punkt0 was merged 5 days ago • Approved  
- 1
+- [#22 update tomato branch](https://github.com/linn2punkt0/Come-on-tomato/pull/22)
+- [#23 Tomato- create in constructor](https://github.com/linn2punkt0/Come-on-tomato/pull/23)
+- [#24 Tomato](https://github.com/linn2punkt0/Come-on-tomato/pull/24)
+- [#25 Tomato](https://github.com/linn2punkt0/Come-on-tomato/pull/25)
+- [#26 Fixed collision rat tomato](https://github.com/linn2punkt0/Come-on-tomato/pull/26)
+- [#27 Switch to game over scene on collision](https://github.com/linn2punkt0/Come-on-tomato/pull/27)
+- [#28 get new updates](https://github.com/linn2punkt0/Come-on-tomato/pull/28)
+- [#29 Camera](https://github.com/linn2punkt0/Come-on-tomato/pull/29)
+- [#30 Tomato](https://github.com/linn2punkt0/Come-on-tomato/pull/30)
+- [#31 Camera](https://github.com/linn2punkt0/Come-on-tomato/pull/31)
+- [#32 Update README.md](https://github.com/linn2punkt0/Come-on-tomato/pull/32)
+- [#33 get updates to seagull](https://github.com/linn2punkt0/Come-on-tomato/pull/33)
+- [#34 Seagull](https://github.com/linn2punkt0/Come-on-tomato/pull/34)
+- [#35 made screen smaller](https://github.com/linn2punkt0/Come-on-tomato/pull/35)
+- [#36 Seagull](https://github.com/linn2punkt0/Come-on-tomato/pull/36)
+- [#37 updates](https://github.com/linn2punkt0/Come-on-tomato/pull/37)
+- [#38 Seagull](https://github.com/linn2punkt0/Come-on-tomato/pull/38)
 Game over img
 #39 by mariaeid was merged 5 days ago • Approved  
 updates
