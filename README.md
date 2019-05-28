@@ -36,7 +36,7 @@ Testers without programming knowledge:
 - Mikael Johansson
 - Robert Berger
 
-## Feedback from group 13
+## Feedback from group 11
 
 - [Tomato.js](https://github.com/linn2punkt0/Come-on-tomato/blob/master/sprites/Tomato.js) line 23, think about not pushing code you dont use.
 - [Game.js](https://github.com/linn2punkt0/Come-on-tomato/blob/master/scenes/Game.js) maybe include a scene witch loads and imports all the thing you need in the game.
