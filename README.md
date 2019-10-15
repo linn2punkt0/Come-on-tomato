@@ -10,6 +10,7 @@ Navigate with the left and right arrows and jump with spacebar.
 
 ## About
 This is a game project for school made with Phaser3.
+It's a side-scroll game where you have to move around and jump to avoid enemies.
 
 ## Created by
 
