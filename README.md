@@ -8,6 +8,9 @@ Navigate with the left and right arrows and jump with spacebar.
 
 #### Play online here: https://come-on-tomato.netlify.com
 
+## About
+This is a game project for school made with Phaser3.
+
 ## Created by
 
 - [Linn Johansson](https://github.com/linn2punkt0?tab=repositories)
